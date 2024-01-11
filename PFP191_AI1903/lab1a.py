@@ -16,6 +16,7 @@ def quadratic_formula(a, b, c, x):
     
         solution1 = (-b + math.sqrt(S2)) / 2*a
         solution2 = (-b - math.sqrt(S2)) / 2*a
+        print(f"S2 = {S2}")
         print(f"There exist 2 unique solutions x ={solution1} and x = {solution2}")
     elif S2 == 0:
         solution3 = -b/a
@@ -73,3 +74,16 @@ if a + b > c and b + c > a and c + a > b:
     print(f"The area of the triangle is {area}")
 else:
     print("a, b, c are not sides of a triangle")
+
+
+
+a = float(input("Enter value: "))
+b = float(input("Enter value: "))
+c = float(input("Enter value: "))
+
+num_list = [a, b, c]
+max_value = max(num_list)
+sorted_list = sorted(num_list)
+print(num_list)
+print(f"The max value is {max_value}")
+print("Arranged list :", sorted_list )
