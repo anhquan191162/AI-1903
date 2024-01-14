@@ -21,3 +21,9 @@ for i in range(0,10):
     
     prev_num = i
     
+
+str1 = 'Name'
+str2 = 'Is'
+str3 = 'James'
+
+print(f"{str1}**{str2}")
