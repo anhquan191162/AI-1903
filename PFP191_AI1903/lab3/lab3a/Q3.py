@@ -63,16 +63,18 @@ nrm_count = 0
 for char in string:
     if char.isalnum() == False:
         spc_count +=1
-print(spc_count)
+print(f"Total special symbols : {spc_count}")
 
 for i in string:
     number_lis = '0123456789'
     if i in number_lis:
         int_count +=1
-print(int_count)
+print(f"Total intergers: {int_count}")
 
 nrm_count = nrm_count + len(string) - int_count - spc_count
-print(nrm_count)
+print(f"Total chars: {nrm_count}")
+
+
 
     
 
