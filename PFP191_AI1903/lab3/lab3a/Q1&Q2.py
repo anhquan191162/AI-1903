@@ -16,7 +16,7 @@ def sum_cal(num):
 
 sum_cal(num)
 
-#display num from a list (div5==0 , >150 -> next num, >500 -> break)
+
 arr = [int(x) for x in input("Enter values for a list seperated by whitespace: ").split()]
 
 for i in arr:

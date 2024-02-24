@@ -1,0 +1,4 @@
+My First line.
+My Second line.
+This content is added to the end of the file.
+Demonstrating tell.

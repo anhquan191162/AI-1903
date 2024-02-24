@@ -1,44 +1,35 @@
-import datetime
+def check_positive_integers(list):
+    
+    for elem in list:
+        if type(elem) is not int or elem < 1:
+            print("There is an element that is not an integer or is smaller than 1.")
+            break
+    return list
 
-def is_valid_date(day, month, year):
-    try:
-        datetime.datetime(year, month, day)
-        return True
-    except ValueError:
+
+def is_prime(n):
+    if n == 1:
         return False
+    for i in range(2, n):
+        if n%i== 0:
+            return False
+        
+    return n
+        
+    
+   
 
-def print_ascii_codes(chars):
-    for char in sorted(chars, reverse=True):
-        print(f"{char}: {ord(char)}, {hex(ord(char))}")
-
-while True:
-    print("1- Processing date data")
-    print("2- Character data")
-    print("3- Quit")
-    
-    choice = input("Choose an operation: ")
-    
-    if choice == "1":
-        day = int(input("Enter day: "))
-        month = int(input("Enter month: "))
-        year = int(input("Enter year: "))
-        
-        if is_valid_date(day, month, year):
-            print("The date is valid.")
-        else:
-            print("The date is not valid.")
-            
-    elif choice == "2":
-        chars = input("Enter two characters: ")
-        
-        if len(chars) != 2:
-            print("Please enter exactly two characters.")
-            continue
-        
-        print_ascii_codes(chars)
-        
-    elif choice == "3":
-        break
-    
+lst = list(int(x) for x in input("Enter values bigger than 1: ").split())
+check_positive_integers(lst)
+new_lst = []
+for i in lst:
+    if is_prime(i):
+        new_lst.append(i)
     else:
-         print ("Invalid option selected. Please try again.")
+        pass
+    
+print(lst)
+print(new_lst)
+print(max(new_lst))
+print(sum(new_lst))
+

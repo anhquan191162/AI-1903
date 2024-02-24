@@ -1,1 +1,2 @@
-print(list(range(1,32)))
+fhand = open('D:\\txt\s.txt', 'r')
+print(fhand.read())
