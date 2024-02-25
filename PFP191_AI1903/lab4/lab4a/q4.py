@@ -3,8 +3,8 @@ import shutil
 import datetime
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
-file1 = "C:\\Users\\admin\\OneDrive\\Tài liệu\\GitHub\\AI-1903\\PFP191_AI1903\\sales.txt"
-file2 = "C:\\Users\\admin\\OneDrive\\Tài liệu\\GitHub\\AI-1903\\PFP191_AI1903\\renamed_sales.txt"
+file1 = "C:\\Users\\admin\\OneDrive\\Tài liệu\\GitHub\\AI-1903\\PFP191_AI1903\\renamed_sales.txt"
+file2 = "C:\\Users\\admin\\OneDrive\\Tài liệu\\GitHub\\AI-1903\\PFP191_AI1903\\poem.txt"
 def rename_file(old_file, new_file):
     if os.path.exists(old_file):
         os.rename(old_file, new_file)
