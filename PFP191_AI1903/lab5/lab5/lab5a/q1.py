@@ -1,9 +1,9 @@
-"""def list_maker():
+def list_maker():
     L = list(x for x in input("Enter any value, char: ").split())
     print(L)
 
 list_maker()
-"""
+
 list1 = ["M", "na", "i", "Ke"]
 list2 = ["y", "me", "s", "lly"]
 
@@ -18,3 +18,5 @@ def concatenate(list1, list2):
     return list3
 
 print(concatenate(list1, list2))
+
+

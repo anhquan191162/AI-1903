@@ -1,4 +1,9 @@
-sum = 1
-for i in range(10000000):
-    sum = sum*2
-    print(sum)
+c = {'a': 10, 'b':1, 'c':22}
+tmp = []
+for k,v in c.items():
+    tmp.append((k, v))
+
+print(tmp)
+
+tmp = sorted(tmp, reverse= True)
+print(tmp)
