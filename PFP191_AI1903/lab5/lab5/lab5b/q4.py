@@ -12,3 +12,4 @@ print(type(School_bus3))
 
 
 print(isinstance(School_bus3, Vehicle3))
+

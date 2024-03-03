@@ -8,7 +8,7 @@ class Vehicle:
     
     def seating_capacity(self, capacity):
         return f"The seating capacity of {self.name} is {capacity} passengers"
-
+    
     def print(self):
         print(f"Vehicle name: {self.name} \nSpeed: {self.max_speed} \nMileage: {self.mileage} \nColor : {self.color}")
         
