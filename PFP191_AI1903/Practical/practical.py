@@ -18,6 +18,8 @@ for i in lst:
             primelst.append(i)
 
 print(primelst)
+print(max(primelst))
+
 
 
 

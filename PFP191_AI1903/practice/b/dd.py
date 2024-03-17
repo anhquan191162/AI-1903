@@ -1,9 +1,16 @@
-c = {'a': 10, 'b':1, 'c':22}
-tmp = []
-for k,v in c.items():
-    tmp.append((k, v))
+class Students():
+    def __init__(self,Name,Class,Assessment,PracticalExam,FinalExam):
+        self.n = Name
+        self.c = Class
+        self.a = Assessment
+        self.pe = PracticalExam
+        self.fe = FinalExam
 
-print(tmp)
-
-tmp = sorted(tmp, reverse= True)
-print(tmp)
+class Students_Manager():
+    def __init__(self):
+        self.students = []
+    def add(self,Name,Class,Assessment,PracticeExam,FinalExam):
+        self.students.append(Students(Name,Class,Assessment,PracticeExam,FinalExam))
+    def display(self):
+        for student in self.students:
+            print(f"Name: {student.n}\nClass: {S}")

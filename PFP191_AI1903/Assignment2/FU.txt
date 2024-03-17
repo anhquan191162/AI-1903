@@ -1,0 +1,16 @@
+======================
+2
+Ten sach: C_PROGRAMMING_LANGUAGE
+Ten tac gia: DENNIS
+Nha xuat ban: PRENTICE
+Nam xuat ban: 1988
+Gia ban: 590000.0
+
+
+Ten sach: PROGRAMMING_IN_ANSI_C
+Ten tac gia: BALAGURUSAMY
+Nha xuat ban: NONE_
+Nam xuat ban: 2012
+Gia ban: 6000000.0
+
+======================
