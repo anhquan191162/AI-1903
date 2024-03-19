@@ -1,0 +1,5 @@
+Employee 1
+Name: QUAN
+Code: 191162
+Salary: 190000.0
+Allowance: 200000.0
