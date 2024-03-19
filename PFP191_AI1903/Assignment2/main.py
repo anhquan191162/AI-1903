@@ -52,7 +52,7 @@ class Quan_ly():
                 for sach in self.list.sort(key= lambda x : x.Nam_XB ,reverse=True):
                     file.write(f"\n({str(sach.Ten_sach).ljust(30)} {str(sach.Ten_tac_gia).center(30)} {str(sach.Nam_XB).rjust(10)} {str(sach.Gia_ban).rjust(10)})\n")
     def tim_kiem(self):
-        name = input('NHAP TEN CUON SACH MUON TIM')
+        name = input('NHAP TEN CUON SACH MUON TIM: ')
         for sach in self.list:
             if sach.Ten_sach == name:
                 print(f"{sach.Ten_Tac_gia}\n{sach.Nha_xuat_ban}")

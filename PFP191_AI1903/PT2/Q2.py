@@ -2,12 +2,12 @@ import os
 __location__ = os.path.realpath(os.path.join(os.getcwd(),os.path.dirname(__file__)))
 
 class Employees():
-    def __init__(self,Code,name,salary,allowance,total):
+    def __init__(self,Code,name,salary,allowance):
         self.C = Code
         self.n = name
         self.s = salary
         self.a = allowance
-        self.t = total
+        self.t = salary + allowance
 class EmployeeManger():
     def __init__(self):
         self.list = []
@@ -19,8 +19,8 @@ class EmployeeManger():
             name = str(input("Enter name: "))
             salary = float(input("Enter salary: "))
             allowance =float(input("Enter allowance: "))
-            total = salary + allowance
-            self.list.append(Employees(code,name,salary,allowance,total))
+            
+            self.list.append(Employees(code,name,salary,allowance))
         
         with open(os.path.join(__location__,'input.txt'),'w') as file:
             for i,employee in enumerate(self.list):
@@ -33,12 +33,11 @@ class EmployeeManger():
     
 
     def sort_2(self):
-        self.list2 = self.list.sort(key=lambda x : x.t,reverse=True)
+        sorted_employees = sorted(self.list, key=lambda x: x.t)
         with open(os.path.join(__location__,'result.txt'),'w') as file:
-            for i,employee in enumerate(self.list2):
-                file.write(f"Employee {i+1}\nName: {employee.n}\nCode: {employee.C}\nSalary: {employee.s}\nAllowance: {employee.a}")
-        for i,employee in enumerate(self.list2):
-                print(f"Employee {i+1}\nName: {employee.n}\nCode: {employee.C}\nSalary: {employee.s}\nAllowance: {employee.a}")
+            for i, employee in enumerate(sorted_employees):
+                file.write(f"Employee {i+1}\nName: {employee.n}\nCode: {employee.C}\nSalary: {employee.s}\nAllowance: {employee.a}\n")
+                print(f"Employee {i+1}\nName: {employee.n}\nCode: {employee.C}\nSalary: {employee.s}\nAllowance: {employee.a}\n")
 
 key = EmployeeManger()
 def Main():
@@ -55,6 +54,8 @@ def Main():
             Main()
         elif opt == 3:
             key.sort_2()
+            print()
+            Main()
         else:
             print("Invalid choice.")
             print()

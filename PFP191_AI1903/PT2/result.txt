@@ -1,0 +1,5 @@
+Employee 1
+Name: QUAN
+Code: HE191162
+Salary: 19000.0
+Allowance: 20000.0
