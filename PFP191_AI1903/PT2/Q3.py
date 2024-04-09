@@ -1,3 +1,5 @@
+import os
+__location__ = os.path.realpath(os.path.join(os.getcwd(),os.path.dirname(__file__)))
 def knapsack(N, W, items):
     
     dp = [[0] * (W + 1) for _ in range(N + 1)]
@@ -28,7 +30,7 @@ def knapsack(N, W, items):
     return dp[N][W], included_items
 
 
-with open("BAG.INP", "r") as file:
+with open(os.path.join(__location__,"BAG.INP"), "r") as file:
     N, W = map(int, file.readline().split())
     items = [list(map(int, line.split()[:-1])) + [line.split()[-1]] for line in file.readlines()]
 
