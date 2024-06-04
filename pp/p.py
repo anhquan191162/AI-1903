@@ -1,11 +1,12 @@
-def factorial(n : int):
-    while n>=0:
-        if n == 1 or n == 0:
-            return 1
-        else:
-            return n*factorial(n-1)
-    else:
-        print("Value is smaller than 0 or not an int.")
+def main(n,m):
+    temp = [0]*(n+1)
+    for i in range(n):
+        temp[m[i]-1] = 1
+    for i in range(n+1):
+        if temp[i] == 0:
+            return i + 1
 
-n = 5
-print(factorial(n))
+if __name__ == "__main__":
+    n = int(input())
+    m = list(map(int,input()))
+    print(main(n,m))
