@@ -100,7 +100,23 @@ class BinaryTree:
     def maxValue(self):
         return self._maxValueNode(self.root)
     def avg(self):
-        pass
+        if self.root is None:
+            return 0
+        return self._avg(self.root)
+    def _avg(self,node):
+        count = 1
+        temp = 0
+        if node:
+            temp += node.key
+            count += 1
+            self._avg(node.left)
+            self._avg(node.right)
+        res = float(temp/count)
+        return res
+        
+
+
+        
     def height(self):
         return self._height(self.root)
     def _height(self,node):
@@ -108,12 +124,73 @@ class BinaryTree:
             return 0
         else:
             return 1 + max(self._height(node.left),self._height(node.right))
+    def cost(self):
+        if self.root is None:
+            return
+        
+        return self._cost(self.root)
+    def _cost(self,node):
+        if node is None:
+            return
+        left_cost = self._cost(node.left)
+        right_cost = self._cost(node.right)
+
+        return node.key + max(left_cost,right_cost)
+    def is_avl(self):
+        def check_avl(node):
+            if node is None:
+                return 0, True
+            left_height = self._height(node.left)
+            right_height = self._height(node.right)
+            balance = abs(left_height-right_height)
+            if balance > 1:
+                return False
+            return check_avl(node.left) and check_avl(node.right)
+        return check_avl(self.root)
     
+    def is_complete(self):
+        if self.root is None:
+            return True
+        queue = [self.root]
+        end = False
+        while queue:
+            current = queue.pop(0)
+            if current:
+                if end:
+                    return False
+                queue.append(current.left)
+                queue.append(current.right)
+            else:
+                end = True
+        return True
+    def is_max_or_min(self):
+        def _max_heap(node):
+            if node is None:
+                return True
+            if node.left and node.left.key > node.key:
+                return False
+            if node.right and node.right.key > node.key:
+                return False
+            return _max_heap(node.left) and _max_heap(node.right)
+        def _min_heap(node):
+            if node is None:
+                return True
+            if node.left and node.left.key < node.key:
+                return False
+            if node.right and node.right.key < node.key:
+                return False
+            return _min_heap(node.left) and _min_heap(node.right)
+        return _max_heap(self.root) or _min_heap(self.root)
+    def is_heap(self):
+        return self.is_complete() and self.is_max_or_min()
+    
+
+        
 
 
 if __name__ == '__main__':
     t = BinaryTree()
-    arr = [12, 7, 1, 3, 2, 5, 10, 8, 6, 9]
+    arr = [ 7, 1, 3]
     for i in arr:
         t.insert(i)
 
@@ -122,4 +199,8 @@ if __name__ == '__main__':
     t.inorder()
     print()
     t.postorder()
-    
+    print()
+    print(t.height())
+    print(t.is_avl())
+    print(t.is_heap())
+    print(t.avg())
