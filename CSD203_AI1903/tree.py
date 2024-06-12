@@ -34,7 +34,7 @@ class Node:
 
 def Inorder(node):
     if node is None:
-        return
+        return 
     Inorder(node.left)
     print(node.data,end=' ')
     Inorder(node.right)
@@ -47,8 +47,11 @@ def Postorder(node):
     else:
         return
 def Preorder(node):
-    pass
-
+    if node:
+        print(node.data)
+        Preorder(node.left)
+        Preorder(node.right)
+    return
 if __name__ == '__main__':
     root = Node(1)
     root.left = Node(2)

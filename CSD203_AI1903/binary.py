@@ -93,6 +93,19 @@ class BinaryTree:
             self.postorder_traversal(root.left)
             self.postorder_traversal(root.right)
             print(root.value, end=' ')
+    def bfs(self,root):
+        queue = [root]
+        res = []
+        while len(queue) > 0:
+            node = queue.pop(0)
+            res.append(node.value)
+            if node.left is not None:
+                queue.append(node.left)
+            if node.right is not None:
+                queue.append(node.right)
+        return res
+    
+        
 
 # Example Usage
 if __name__ == "__main__":
@@ -112,13 +125,15 @@ if __name__ == "__main__":
     print("\nPostorder traversal:")
     bt.postorder_traversal(bt.root)
 
-    print("\nSearch for node with value 7:")
-    node = bt.search(7)
-    print("Node found:", node.value if node else "Node not found")
+    # print("\nSearch for node with value 7:")
+    # node = bt.search(7)
+    # print("Node found:", node.value if node else "Node not found")
 
-    print("\nHeight of the tree:", bt.height(bt.root))
+    # print("\nHeight of the tree:", bt.height(bt.root))
 
-    print("\nDelete node with value 10")
-    bt.delete(10)
-    print("Inorder traversal after deletion:")
-    bt.inorder_traversal(bt.root)
+    # print("\nDelete node with value 10")
+    # bt.delete(10)
+    # print("Inorder traversal after deletion:")
+    # bt.inorder_traversal(bt.root)
+    print()
+    print(bt.bfs(bt.root))

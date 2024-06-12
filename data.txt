@@ -1,8 +1,0 @@
-======================
-1Ten sach: C_Programming_Language
-Ten tac gia: Dennis_
-Nha xuat ban: Pilgrim
-Nam xuat ban: 1988
-Gia ban: 59000.0
-
-======================

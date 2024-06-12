@@ -100,19 +100,20 @@ class BinaryTree:
     def maxValue(self):
         return self._maxValueNode(self.root)
     def avg(self):
-        if self.root is None:
+        total_sum,total_count = self._avg(self.root)
+        if total_count == 0:
             return 0
-        return self._avg(self.root)
+        
+        return total_sum / total_count 
+        
     def _avg(self,node):
-        count = 1
-        temp = 0
-        if node:
-            temp += node.key
-            count += 1
-            self._avg(node.left)
-            self._avg(node.right)
-        res = float(temp/count)
-        return res
+        if not node:
+            return 0,0
+        left_sum , left_count = self._avg(node.left)
+        right_sum, right_count = self._avg(node.right)
+        total_sum = left_sum + right_sum + node.key
+        total_count = left_count + right_count + 1
+        return total_sum,total_count     
         
 
 
@@ -139,7 +140,7 @@ class BinaryTree:
     def is_avl(self):
         def check_avl(node):
             if node is None:
-                return 0, True
+                return True
             left_height = self._height(node.left)
             right_height = self._height(node.right)
             balance = abs(left_height-right_height)
@@ -190,7 +191,7 @@ class BinaryTree:
 
 if __name__ == '__main__':
     t = BinaryTree()
-    arr = [ 7, 1, 3]
+    arr = [int(x) for x in input().split()]
     for i in arr:
         t.insert(i)
 
